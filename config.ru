@@ -20,23 +20,8 @@ if freeze_core
   else
     require 'tilt/sass' unless File.exist?(File.expand_path('../compiled_assets.json', __FILE__))
 
-    # When enabling refrigerator, you may need to load additional
-    # libraries before freezing the core to work correctly.  You'll
-    # want to uncomment the appropriate lines below if you run into
-    # problems after enabling refrigerator.
-
-    # rackup -s webrick
-    #require 'forwardable'
-    #require 'webrick'
-
-    # rackup -s Puma
-    #require 'yaml' 
-    #Gem.ruby
-
-    # Puma (needed for state file)
-    #require 'yaml'
-
-    # Unicorn (no changes needed)
+    require 'yaml' 
+    Gem.ruby
 
     Refrigerator.freeze_core
   end

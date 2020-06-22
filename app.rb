@@ -71,7 +71,6 @@ class App < Roda
 
   plugin :sessions,
     key: '_App.session',
-    #cookie_options: {secure: ENV['RACK_ENV'] != 'test'}, # Uncomment if only allowing https:// access
     secret: ENV.send((ENV['RACK_ENV'] == 'development' ? :[] : :delete), 'APP_SESSION_SECRET')
 
   Unreloader.require('routes'){}
